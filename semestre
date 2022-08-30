@@ -1,0 +1,36 @@
+nome = str(input("Nome do Aluno: ")).upper() #Seleção do Nome
+s1 = float(input("Semestre 1: ")) #Seleção das Notas
+s2 = float(input("Semestre 2: "))
+
+media = (s1+s2)/2 #Cálculo da média
+
+print(" ")
+print("-=-"*20)
+print("Tabela Aluno {}".format(nome))
+print("-=-"*20)
+
+#Define em qual conceito a média do aluno se enquandra
+if media >= 0 and media <= 4:
+    conceito = "E"
+elif media >4 and media <= 6:
+    conceito = "D"
+elif media >6 and media <= 7.5:
+    conceito = "C"
+elif media >7.5 and media <= 9:
+    conceito = "B"
+elif media > 9 and media <=10:
+    conceito = "A"
+else:
+    print("Valor inválido!")
+
+print("\nNota do 1ºSemestre {:.2f} \ Nota do 2ºSemestre {:.2f}".format(s1,s2))
+print("Média: {:.2f}".format(media))
+print("Conceito do Aluno: {}".format(conceito))
+
+#Define pelo conceito do aluno se foi APROVADO OU REPROVADO
+if conceito == "A" or conceito == "B" or conceito == "C":
+    print("APROVADO")
+    print("-=-"*20)
+elif conceito == "D" or conceito == "E":
+    print("REROVADO")
+    print("-=-"*20)
